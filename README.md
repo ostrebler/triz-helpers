@@ -2,7 +2,7 @@
 
 ### Input
 
-```
+```javascript
 getPrincipleWeights([
   {
     improving: 8,
@@ -20,7 +20,7 @@ getPrincipleWeights([
 
 ### Output
 
-```
+```javascript
 [
   {
     principle: 7,
