@@ -1,0 +1,19 @@
+{
+  "name": "triz-helpers",
+  "version": "1.0.0",
+  "description": "Some utility functions to work with the TRIZ method.",
+  "main": "index.js",
+  "scripts": {
+    "push": "git add . && git commit -m 'Progress made' && git push -u origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ostrebler/triz-helpers.git"
+  },
+  "author": "ostrebler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ostrebler/triz-helpers/issues"
+  },
+  "homepage": "https://github.com/ostrebler/triz-helpers#readme"
+}
