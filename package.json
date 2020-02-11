@@ -1,10 +1,12 @@
 {
   "name": "triz-helpers",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Some utility functions to work with the TRIZ method.",
-  "main": "index.js",
+  "main": "lib/triz.js",
+  "types": "lib/triz.d.ts",
   "scripts": {
-    "push": "git add . && git commit -m 'Progress made' && git push -u origin master"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/ostrebler/triz-helpers#readme",
   "dependencies": {
-    "lodash": "^4.17.15"
+    "@types/lodash": "^4.14.149",
+    "lodash": "^4.17.15",
+    "typescript": "^3.7.5"
   }
 }
