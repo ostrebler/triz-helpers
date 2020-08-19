@@ -1,6 +1,6 @@
 {
   "name": "triz-helpers",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Some utility functions to work with the TRIZ method.",
   "main": "lib/triz.js",
   "types": "lib/triz.d.ts",
