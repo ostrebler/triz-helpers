@@ -1,23 +1,23 @@
-import { sortBy, map } from "lodash";
+type PrincipleNumber = number;
+type Weight = number;
+type Cell = Array<PrincipleNumber>;
 
-type Cell = {
-  principles: number[];
-};
+export function getPrincipleWeights(cells: Array<Cell>) {
+  const weights = new Map<PrincipleNumber, Weight>();
 
-export function getPrincipleWeights(cells: Cell[]) {
-  let weights: Record<string, number> = Object.create(null);
   for (const cell of cells)
-    for (let i = 0; i !== cell.principles.length; ++i) {
-      const ip = cell.principles[i];
-      const weight = [2, 1.5, 1, 0.75][i];
-      if (ip in weights) weights[ip] += weight;
-      else weights[ip] = weight;
-    }
-  return sortBy(
-    map(weights, (weight, ip) => ({
-      principle: parseInt(ip, 10),
-      weight
-    })),
-    ({ weight }) => -weight
-  );
+    cell.forEach((principleNumber, index) => {
+      const weight = weights.get(principleNumber) ?? 0;
+      const moreWeight = [2, 1.5, 1, 0.75][index];
+      weights.set(principleNumber, weight + moreWeight);
+    });
+
+  const result = Array.from(weights);
+  const weightTotal = result.reduce((acc, [, weight]) => acc + weight, 0);
+  return result
+    .sort(([, firstWeight], [, secondWeight]) => secondWeight - firstWeight)
+    .map(([principleNumber, weight]): [number, number] => [
+      principleNumber,
+      weightTotal === 0 ? 0 : weight / weightTotal
+    ]);
 }
